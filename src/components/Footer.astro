@@ -5,7 +5,7 @@
 <footer class="footer">
     <div class="container footer-content">
         <div class="copyright">
-            © 2024 John Doe. Todos los derechos reservados.
+            © 2024 Diego Granobles. Todos los derechos reservados.
         </div>
         <div class="social-links">
             <a href="#" aria-label="Github">
@@ -65,15 +65,15 @@
     .footer {
         padding: 2rem 0;
         margin-top: 4rem;
-        background: white;
-        border-top: 1px solid #e2e8f0;
+        background: var(--card-bg);
+        border-top: 1px solid var(--border-color);
     }
 
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #64748b;
+        color: var(--text-muted);
         font-size: 0.875rem;
     }
 
@@ -83,12 +83,12 @@
     }
 
     .social-links a {
-        color: #94a3b8;
+        color: var(--text-muted);
         transition: color 0.2s;
     }
 
     .social-links a:hover {
-        color: #3b82f6;
+        color: var(--primary);
     }
 
     @media (max-width: 768px) {

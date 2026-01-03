@@ -1,0 +1,435 @@
+---
+const projects = [
+    {
+        title: "Predicción de Churn",
+        description:
+            "Modelo de clasificación supervisada para identificar clientes en riesgo de abandono en una empresa de telecomunicaciones. Logré un recall del 85%.",
+        tags: ["Python", "Scikit-learn", "XGBoost"],
+        link: "#",
+        linkText: "Ver en GitHub",
+        color: "#4F46E5", // Indigo/Blue
+        icon: "chart",
+    },
+    {
+        title: "Dashboard de Ventas Retail",
+        description:
+            "Dashboard interactivo diseñado en Tableau para monitorear KPIs de ventas regionales. Permite filtrar por categoría de producto y segmento de cliente.",
+        tags: ["Tableau", "SQL", "Excel"],
+        link: "#",
+        linkText: "Ver Dashboard",
+        color: "#D946EF", // Fuchsia/Pink
+        icon: "dashboard",
+    },
+    {
+        title: "Optimización de Inventario",
+        description:
+            "Análisis de series temporales para predecir la demanda de productos y optimizar los niveles de stock. Reducción estimada del 15% en costos.",
+        tags: ["R", "Time Series", "Forecasting"],
+        link: "#",
+        linkText: "Ver en GitHub",
+        color: "#10B981", // Emerald/Green
+        icon: "database",
+    },
+    {
+        title: "Análisis de Sentimiento Twitter",
+        description:
+            "Procesamiento de Lenguaje Natural (NLP) sobre tweets para medir la percepción de marca durante el lanzamiento de un nuevo producto tecnológico.",
+        tags: ["Python", "NLTK", "Pandas"],
+        link: "#",
+        linkText: "Ver en GitHub",
+        color: "#F97316", // Orange
+        icon: "network",
+    },
+    {
+        title: "Segmentación de Clientes",
+        description:
+            "Aplicación de algoritmos de clustering K-Means para agrupar clientes basándose en comportamiento de compra y demografía para campañas.",
+        tags: ["Python", "K-Means", "Matplotlib"],
+        link: "#",
+        linkText: "Ver en GitHub",
+        color: "#3B82F6", // Blue
+        icon: "bar",
+    },
+    {
+        title: "ETL Pipeline Financiero",
+        description:
+            "Desarrollo de un pipeline automatizado para extracción, transformación y carga de datos bursátiles en un data warehouse usando Airflow.",
+        tags: ["SQL", "Apache Airflow", "AWS"],
+        link: "#",
+        linkText: "Ver en GitHub",
+        color: "#1E293B", // Dark Slate
+        icon: "money",
+    },
+];
+
+const filters = ["Todos", "Python", "SQL", "Tableau", "Machine Learning", "R"];
+---
+
+<section class="projects-section" id="proyectos">
+    <div class="container">
+        <div class="header">
+            <h2 class="title">Proyectos de Análisis de Datos</h2>
+            <p class="subtitle">
+                Una colección seleccionada de mis análisis exploratorios,
+                modelos predictivos de Machine Learning y dashboards
+                interactivos.
+            </p>
+        </div>
+
+        <div class="filters">
+            {
+                filters.map((filter, index) => (
+                    <button class={`filter-btn ${index === 0 ? "active" : ""}`}>
+                        {filter}
+                    </button>
+                ))
+            }
+        </div>
+
+        <div class="projects-grid">
+            {
+                projects.map((project) => (
+                    <article class="project-card">
+                        <div
+                            class="card-image"
+                            style={`background-color: ${project.color}`}
+                        >
+                            <div class="icon-wrapper">
+                                {/* Simplified Icons based on context */}
+                                {project.icon === "chart" && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="card-icon"
+                                    >
+                                        <line x1="18" y1="20" x2="18" y2="10" />
+                                        <line x1="12" y1="20" x2="12" y2="4" />
+                                        <line x1="6" y1="20" x2="6" y2="14" />
+                                    </svg>
+                                )}
+                                {project.icon === "dashboard" && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="card-icon"
+                                    >
+                                        <rect
+                                            x="3"
+                                            y="3"
+                                            width="7"
+                                            height="7"
+                                        />
+                                        <rect
+                                            x="14"
+                                            y="3"
+                                            width="7"
+                                            height="7"
+                                        />
+                                        <rect
+                                            x="14"
+                                            y="14"
+                                            width="7"
+                                            height="7"
+                                        />
+                                        <rect
+                                            x="3"
+                                            y="14"
+                                            width="7"
+                                            height="7"
+                                        />
+                                    </svg>
+                                )}
+                                {project.icon === "database" && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="card-icon"
+                                    >
+                                        <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                                    </svg>
+                                )}
+                                {project.icon === "network" && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="card-icon"
+                                    >
+                                        <circle cx="18" cy="5" r="3" />
+                                        <circle cx="6" cy="12" r="3" />
+                                        <circle cx="18" cy="19" r="3" />
+                                        <line
+                                            x1="8.59"
+                                            y1="13.51"
+                                            x2="15.42"
+                                            y2="17.49"
+                                        />
+                                        <line
+                                            x1="15.41"
+                                            y1="6.51"
+                                            x2="8.59"
+                                            y2="10.49"
+                                        />
+                                    </svg>
+                                )}
+                                {project.icon === "bar" && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="card-icon"
+                                    >
+                                        <line x1="12" y1="20" x2="12" y2="10" />
+                                        <line x1="18" y1="20" x2="18" y2="4" />
+                                        <line x1="6" y1="20" x2="6" y2="16" />
+                                    </svg>
+                                )}
+                                {project.icon === "money" && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="card-icon"
+                                    >
+                                        <line x1="12" y1="1" x2="12" y2="23" />
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    </svg>
+                                )}
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">{project.title}</h3>
+                            <p class="card-description">
+                                {project.description}
+                            </p>
+                            <div class="tags">
+                                {project.tags.map((tag) => (
+                                    <span class="tag">{tag}</span>
+                                ))}
+                            </div>
+                            <a href={project.link} class="card-link">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <>
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    </>
+                                </svg>
+                                {project.linkText}
+                            </a>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .projects-section {
+        padding: 4rem 0;
+    }
+
+    .header {
+        margin-bottom: 3rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    .filters {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 0.5rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+        border-color: var(--text-muted);
+        color: var(--text-color);
+    }
+
+    .filter-btn.active {
+        background: #2563eb;
+        color: white;
+        border-color: #2563eb;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-image {
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .icon-wrapper {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-color);
+        margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        flex: 1;
+        line-height: 1.5;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .tag {
+        background: var(--bg-color);
+        color: var(--text-muted);
+        padding: 0.25rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .card-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.75rem;
+        background: var(--badge-bg);
+        color: var(--badge-text);
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+    }
+
+    .card-link:hover {
+        background: var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            font-size: 2rem;
+        }
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

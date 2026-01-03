@@ -21,22 +21,63 @@ const { title } = Astro.props;
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
             rel="stylesheet"
         />
+        <script is:inline>
+            const theme = (() => {
+                if (
+                    typeof localStorage !== "undefined" &&
+                    localStorage.getItem("theme")
+                ) {
+                    return localStorage.getItem("theme");
+                }
+                return "dark";
+            })();
+
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+
+            window.localStorage.setItem("theme", theme);
+        </script>
     </head>
-    <body>
+    <body class="transition-colors duration-300">
         <slot />
     </body>
 </html>
 <style is:global>
     :root {
-        --bg-color: #f8fafc; /* Light gray background like image */
-        --text-color: #1e293b; /* Dark slate text */
+        --bg-color: #f8fafc;
+        --text-color: #1e293b;
         --text-muted: #64748b;
-        --primary: #2563eb; /* Bright Blue */
+        --primary: #2563eb;
         --primary-hover: #1d4ed8;
         --secondary: #334155;
         --accent: #06b6d4;
         --card-bg: #ffffff;
         --nav-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --badge-bg: #dbeafe;
+        --badge-text: #2563eb;
+        --button-bg: #f1f5f9;
+        --button-bg-hover: #e2e8f0;
+    }
+
+    :root.dark {
+        --bg-color: #0b1120;
+        --text-color: #f8fafc;
+        --text-muted: #94a3b8;
+        --primary: #3b82f6;
+        --primary-hover: #60a5fa;
+        --secondary: #e2e8f0;
+        --accent: #22d3ee;
+        --card-bg: #1e293b;
+        --nav-bg: #0b1120;
+        --border-color: #334155;
+        --badge-bg: rgba(59, 130, 246, 0.1);
+        --badge-text: #60a5fa;
+        --button-bg: rgba(255, 255, 255, 0.1);
+        --button-bg-hover: rgba(255, 255, 255, 0.2);
     }
     html {
         font-family: "Inter", system-ui, sans-serif;
