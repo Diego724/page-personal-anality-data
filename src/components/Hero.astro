@@ -1,0 +1,126 @@
+---
+
+---
+
+<section class="hero-container" id="inicio">
+    <div class="hero-card">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Convirtiendo Datos en <br />
+                <span class="text-white">Decisiones</span>
+            </h1>
+            <p class="hero-description">
+                Hola, soy un Analista de Datos especializado en Python, SQL y
+                visualización. Ayudo a las empresas a desbloquear el valor de
+                sus datos a través de insights accionables.
+            </p>
+            <div class="cta-buttons">
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#" class="btn btn-secondary">Descargar CV</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-container {
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero-card {
+        background: #0b1120 url("/hero-bg.png") no-repeat center center;
+        background-size: cover;
+        border-radius: 20px;
+        padding: 4rem 3rem;
+        position: relative;
+        overflow: hidden;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Dark Overlay Gradient */
+    .hero-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(11, 17, 32, 0.95) 0%,
+            rgba(11, 17, 32, 0.7) 50%,
+            rgba(11, 17, 32, 0.2) 100%
+        );
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 600px;
+    }
+
+    .hero-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        max-width: 500px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 0.2s;
+        display: inline-block;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-primary {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        .hero-card {
+            padding: 2rem;
+            min-height: auto;
+        }
+    }
+</style>

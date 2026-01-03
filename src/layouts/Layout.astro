@@ -1,0 +1,83 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Portafolio de Analista de Datos" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+<style is:global>
+    :root {
+        --bg-color: #f8fafc; /* Light gray background like image */
+        --text-color: #1e293b; /* Dark slate text */
+        --text-muted: #64748b;
+        --primary: #2563eb; /* Bright Blue */
+        --primary-hover: #1d4ed8;
+        --secondary: #334155;
+        --accent: #06b6d4;
+        --card-bg: #ffffff;
+        --nav-bg: #ffffff;
+    }
+    html {
+        font-family: "Inter", system-ui, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Outfit", sans-serif;
+        margin-top: 0;
+        color: var(--text-color);
+    }
+    p {
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Common Utility Classes */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .section {
+        padding: 4rem 0;
+    }
+</style>
