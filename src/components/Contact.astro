@@ -114,14 +114,20 @@
 
             <!-- Right Form -->
             <div class="contact-form-card">
-                <form class="form">
+                <form
+                    class="form"
+                    action="https://formspree.io/f/xojvkdde"
+                    method="POST"
+                >
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Nombre Completo</label>
                             <input
                                 type="text"
                                 id="name"
+                                name="name"
                                 placeholder="Tu nombre"
+                                required
                             />
                         </div>
                         <div class="form-group">
@@ -129,7 +135,9 @@
                             <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 placeholder="ejemplo@correo.com"
+                                required
                             />
                         </div>
                     </div>
@@ -137,11 +145,16 @@
                     <div class="form-group">
                         <label for="subject">Asunto</label>
                         <div class="select-wrapper">
-                            <select id="subject">
-                                <option>Colaboración en Proyecto</option>
-                                <option>Oportunidad Laboral</option>
-                                <option>Charla / Mentoria</option>
-                                <option>Otro</option>
+                            <select id="subject" name="subject">
+                                <option value="Colaboración"
+                                    >Colaboración en Proyecto</option
+                                >
+                                <option value="Empleo"
+                                    >Oportunidad Laboral</option
+                                >
+                                <option value="Charla">Charla / Mentoria</option
+                                >
+                                <option value="Otro">Otro</option>
                             </select>
                         </div>
                     </div>
@@ -150,9 +163,10 @@
                         <label for="message">Mensaje</label>
                         <textarea
                             id="message"
+                            name="message"
                             rows="5"
                             placeholder="Cuéntame sobre el proyecto o la posición..."
-                        ></textarea>
+                            required></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">
