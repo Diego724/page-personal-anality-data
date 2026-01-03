@@ -8,7 +8,7 @@ Este proyecto está construido con un stack tecnológico moderno para asegurar v
 
 - **[Astro](https://astro.build/)**: Framework web para construir sitios web rápidos y orientados al contenido.
 - **HTML5 & CSS3**: Estilizado personalizado con CSS moderno (diseño responsivo, Grid, Flexbox) sin depender de frameworks pesados.
-- **JavaScript/TypeScript**: Lógica interactiva ligera.
+- **JavaScript**: Lógica interactiva ligera.
 - **Bun**: Entorno de ejecución y gestor de paquetes rápido (compatible también con NPM/Node.js).
 
 ## ⚡ Características
